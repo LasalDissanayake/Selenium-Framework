@@ -20,6 +20,9 @@ public class LandingPage {
     private By videoViews = By.cssSelector("div[class='overview-box monthly-views'] div[class='overview-title']");
     private By textboxElement = By.xpath("//span[normalize-space()='Text Box']");
     private By confirmTextboxPage = By.xpath("//h5[normalize-space()='Type your name']");
+    private By buttonElement = By.xpath("//a[@class='rotated-icon']");
+    private By confirmButtonPage = By.xpath("//h5[normalize-space()='Click and Confirm title.']");
+
 
 
 
@@ -61,4 +64,13 @@ public class LandingPage {
         driver.findElement(textboxElement).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(confirmTextboxPage));
     }
+    public void clickOnButtonElement(){
+        WebElement button = driver.findElement(buttonElement);
+        button.click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(confirmButtonPage));
+    }
+
+
+
 }
