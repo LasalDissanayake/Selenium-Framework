@@ -18,6 +18,8 @@ public class LandingPage {
     private By linkPageConfirm = By.xpath("//h5[normalize-space()='Take me to dashboard']");
     private By dropdownPageConfirm = By.cssSelector("div[class='grid ui-fluid'] div:nth-child(1) div:nth-child(1) h5:nth-child(1)");
     private By videoViews = By.cssSelector("div[class='overview-box monthly-views'] div[class='overview-title']");
+    private By textboxElement = By.xpath("//span[normalize-space()='Text Box']");
+    private By confirmTextboxPage = By.xpath("//h5[normalize-space()='Type your name']");
 
 
 
@@ -52,5 +54,11 @@ public class LandingPage {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    public void clickOnTheTextBoxElement(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        driver.findElement(textboxElement).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(confirmTextboxPage));
     }
 }
