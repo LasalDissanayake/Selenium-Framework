@@ -19,4 +19,30 @@ public class ButtonTest extends BaseTest {
         String expectedTitle = "Dashboard";
         Assert.assertEquals(actualTitle,expectedTitle,"Failed");
     }
+
+    @Test
+    public void getPosition(){
+        LandingPage landingPage = new LandingPage(driver);
+        ButtonPage buttonPage = new ButtonPage(driver);
+        landingPage.clickOnElementsDropdownButton();
+        landingPage.clickOnButtonElement();
+        buttonPage.getPosition();
+    }
+
+    @Test
+    public void getcolor(){
+        LandingPage landingPage = new LandingPage(driver);
+        ButtonPage buttonPage = new ButtonPage(driver);
+        landingPage.clickOnElementsDropdownButton();
+        landingPage.clickOnButtonElement();
+        buttonPage.getBackgroundColor();
+    }
+    @Test
+    public void getsize(){
+        LandingPage landingPage = new LandingPage(driver);
+        ButtonPage buttonPage = new ButtonPage(driver);
+        landingPage.clickOnElementsDropdownButton();
+        landingPage.clickOnButtonElement();
+        buttonPage.getWithAndHight();
+    }
 }
