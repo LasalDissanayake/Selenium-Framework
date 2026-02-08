@@ -13,7 +13,7 @@ public class LandingPage {
     private WebDriver driver;
 
     private By elementsDropdownButton = By.cssSelector("body > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > form:nth-child(2) > ul:nth-child(2) > li:nth-child(3) > a:nth-child(1)");
-    private By dropdown = By.cssSelector("a[href='/select.xhtml']");
+    private By dropdown = By.cssSelector("li[id='menuform:m_dropdown'] a span");
     private By link = By.cssSelector("body > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > form:nth-child(2) > ul:nth-child(2) > li:nth-child(3) > ul:nth-child(3) > li:nth-child(6) > a:nth-child(1) > span:nth-child(2)");
     private By linkPageConfirm = By.xpath("//h5[normalize-space()='Take me to dashboard']");
     private By dropdownPageConfirm = By.cssSelector("div[class='grid ui-fluid'] div:nth-child(1) div:nth-child(1) h5:nth-child(1)");
@@ -37,6 +37,8 @@ public class LandingPage {
     }
 
     public void clickOnTheDropdownElement(){
+        LandingPage landingPage = new LandingPage(driver);
+        landingPage.clickOnElementsDropdownButton();
         driver.findElement(dropdown).click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement confirm = wait.until(ExpectedConditions.visibilityOfElementLocated(dropdownPageConfirm));

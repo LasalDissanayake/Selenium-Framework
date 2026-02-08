@@ -21,6 +21,7 @@ public class ButtonPage {
         WebElement button = driver.findElement(clickButton);
         button.click();
     }
+
     public void getPosition(){
         WebElement button = driver.findElement(positionButton);
         Point location = button.getLocation(); //Location eka ganna .getLocation();
@@ -38,7 +39,7 @@ public class ButtonPage {
 
     public void getWithAndHight(){
         WebElement button = driver.findElement(widthHight);
-        Dimension sizes = button.getSize();
+        Dimension sizes = button.getSize(); //Get size eken thamai diga palala ganne.
         int height = sizes.getHeight();
         int width = sizes.getWidth();
         System.out.println("Button's height is: "+height+" width is:"+width);

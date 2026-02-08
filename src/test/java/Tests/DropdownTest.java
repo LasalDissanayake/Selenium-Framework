@@ -1,11 +1,33 @@
 package Tests;
 
-public class DropdownTest {
+import Base.BaseTest;
+import Pages.DropdownPage;
+import Pages.LandingPage;
+import org.testng.annotations.Test;
 
-    // 1.1) ways of select values in basic dropdown
-    // 1.2) get the number of options in dropdown
-    // 1.3) using sendkeys to select value in dropdown
-    // 1.4) selecting value of the bootstrap dropdown
-    // 1.5) google search select value from suggestions
-    // 1.6) handle hidden auto suggest dropdown and search using DOM debugger Trick
+public class DropdownTest extends BaseTest {
+
+    @Test
+    public void selectFromDropdown(){
+        DropdownPage dropdownPage = new DropdownPage(driver);
+        LandingPage landingPage = new LandingPage(driver);
+        landingPage.clickOnTheDropdownElement();
+        dropdownPage.waysOfSelect();
+    }
+    @Test
+    public void getFromDropdown(){
+        DropdownPage dropdownPage = new DropdownPage(driver);
+        LandingPage landingPage = new LandingPage(driver);
+        landingPage.clickOnTheDropdownElement();
+        dropdownPage.getValues();
+    }
+
+    @Test
+    public void getFromBoostrapDropdown(){
+        DropdownPage dropdownPage = new DropdownPage(driver);
+        LandingPage landingPage = new LandingPage(driver);
+        landingPage.clickOnTheDropdownElement();
+        dropdownPage.selectCountry();
+    }
+
 }
