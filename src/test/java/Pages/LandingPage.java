@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.time.Duration;
 
@@ -22,6 +23,7 @@ public class LandingPage {
     private By confirmTextboxPage = By.xpath("//h5[normalize-space()='Type your name']");
     private By buttonElement = By.xpath("//a[@class='rotated-icon']");
     private By confirmButtonPage = By.xpath("//h5[normalize-space()='Click and Confirm title.']");
+    private By radioButton = By.xpath("//span[normalize-space()='Radio Button']");
 
 
 
@@ -71,6 +73,12 @@ public class LandingPage {
         button.click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(confirmButtonPage));
+    }
+
+    public void clickOnRadioButtonElement() {
+       driver.findElement(elementsDropdownButton).click();
+       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+       wait.until(ExpectedConditions.visibilityOfElementLocated(radioButton)).click();
     }
 
 

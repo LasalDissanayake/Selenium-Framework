@@ -12,8 +12,10 @@ public class ButtonTest extends BaseTest {
     public void clickAndConfirm(){
         LandingPage landingPage = new LandingPage(driver);
         ButtonPage buttonPage = new ButtonPage(driver);
+
         landingPage.clickOnElementsDropdownButton();
         landingPage.clickOnButtonElement();
+
         buttonPage.ClickAndConfirmTitle();
         String actualTitle = driver.getTitle();
         String expectedTitle = "Dashboard";
